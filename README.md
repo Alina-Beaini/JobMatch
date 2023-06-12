@@ -5,7 +5,7 @@
 Job Match is a web application that helps match employers to jobseekers (based on needs, majors, years of experience...)
 
 Registration Process:
-    Any user that wishes to register has to specify whether they are employers or jobseekers; this is because the information that we're collecting from each user are different for employers and jobseekers. For example, more precisely, for an employer we will need a company name (but the name of the user creating the account is not required), whereas jobseekers have to provide their degrees and majors, as well as how many years of experience they have in their particular fields.
+    Any user that wishes to register has to specify whether they are employers or jobseekers; this is because the information that we're collecting from each user are different for employers and jobseekers. For example, for an employer we will need a company name (but the name of the user creating the account is not required), whereas jobseekers have to provide their degrees and majors, as well as how many years of experience they have in their particular fields.
 
 Logging In:
     Once logged in, again, the layout is slightly different for employers and jobseekers: On the first page, they both have to "add jobs" and specify what they're looking for. An employer should specify what majors (if any) they are looking for to fill in a particular position as well as the minimum years of experience required. A jobseeker, on the other hand, only needs to tell us how many years of experience he has working in this particular position he's looking for.
