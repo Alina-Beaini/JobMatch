@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+
+ <h3>Profile</h3>
+
+ <br><br>
+
+ <table class="table">
+        <thead>
+            <tr>
+                <th class="text-start">Company Name</th>
+                <th class="text-end">Name</th>
+                <th class="text-end">Email</th>
+                <th class="text-end">Location</th>
+                <th class="text-end">Phone Number</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <th class="text-start">{{ info["company"] }}</th>
+                <th class="text-end">{{ info["name"] }}</th>
+                <th class="text-end">{{ info["email"] }}</th>
+                <th class="text-end">{{ info["location"] }}</th>
+                <th class="text-end">{{ info["phone"] }}</th>
+            </tr>
+
+        </tbody>
+ </table>
+
+<!-- <button>Edit</button> -->
+
+<form action="/edit" method="get">
+    <button type="submit">Edit</button>
+</form>
+
+
+{% endblock %}

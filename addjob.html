@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/" method="post">
+        <!-- <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="job" placeholder="Job Position" type="text">
+        </div> -->
+        <div class="form-group">
+            <select name="job">
+                <option value ="type" disabled selected>Job Position</option>
+                {% for row in jobs %}
+                    <option value="{{ row.job }}">{{ row.job }}</option>
+
+                {% endfor %}
+            </select>
+        </div>
+        <!--<div class="form-group">
+            <input class="form-control" autocomplete="off" autofocus class="form-control" name="major" placeholder="Major" type="text">
+        </div> -->
+        <div class="form-group">
+            <select name="major">
+                <option value ="type" disabled selected>Major</option>
+                <option value="No major">No major</option>
+                {% for row in majors %}
+                    <option value="{{ row.major }}">{{ row.major }}</option>
+
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <input class="form-control" autocomplete="off" autofocus class="form-control" name="years" placeholder="Years of experience" type="integer">
+        </div>
+        <button class="btn btn-primary" type="submit">Save</button>
+    </form>
+
+
+
+{% endblock %}

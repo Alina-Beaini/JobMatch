@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+
+ <h3>Profile</h3>
+
+ <br><br>
+
+ {% if Type == 'employee' %}
+ <table class="table">
+    <thead>
+        <tr>
+            <th class="text-start">Full Name</th>
+            <th class="text-end">Email</th>
+            <th class="text-end">Address</th>
+            <th class="text-end">Phone Number</th>
+            <th class="text-end">Degree</th>
+            <th class="text-end">Major</th>
+            <th class="text-end">Years of experience</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <th class="text-start">{{ info.name }}</th>
+            <th class="text-end">{{ info["email"] }}</th>
+            <th class="text-end">{{ info["address"] }}</th>
+            <th class="text-end">{{ info["phone"] }}</th>
+            <th class="text-end">{{ info["degree"] }}</th>
+            <th class="text-end">{{ info["major"] }}</th>
+            <th class="text-end">{{ info["years"] }}</th>
+        </tr>
+
+    </tbody>
+ </table>
+
+
+{% else %}
+
+<table class="table">
+        <thead>
+            <tr>
+                <th class="text-start">Company Name</th>
+                <th class="text-end">Name</th>
+                <th class="text-end">Email</th>
+                <th class="text-end">Location</th>
+                <th class="text-end">Phone Number</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <th class="text-start">{{ info["company"] }}</th>
+                <th class="text-end">{{ info["name"] }}</th>
+                <th class="text-end">{{ info["email"] }}</th>
+                <th class="text-end">{{ info["location"] }}</th>
+                <th class="text-end">{{ info["phone"] }}</th>
+            </tr>
+
+        </tbody>
+ </table>
+
+
+
+{% endif %}
+
+
+{% endblock %}

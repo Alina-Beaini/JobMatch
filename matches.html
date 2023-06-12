@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Matches
+{% endblock %}
+
+
+{% block main %}
+
+ <h3>Matches</h3>
+
+ <br><br>
+
+ {% if Type == 'employer' %}
+
+    {% for position in positions %}
+    <br><br>
+
+        <h5>{{ position }}s</h5>
+
+
+ <table class="table">
+    <thead>
+        <tr>
+            <th class="text-start">Full Name</th>
+            <th class="text-start">Major</th>
+            <!-- <th class="text-end">Job Position</th> -->
+            <th class="text-end">Years of experience</th>
+            <th class="text-end"> </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for id in ids %}
+            {% if id_job[id] == position %}
+            <tr>
+                <th class="text-start">{{ info[id]["name"] }}</th>
+                <th class="text-start">{{ info[id]["major"] }}</th>
+                <th class="text-end"> {{ id_years[id] }}</th>
+                <th class="text-end">
+                    <!--<button class = "{{ id }}">Read More</button>-->
+                    <form action="/readmore" method="post">
+                        <button name="nameid" value="{{ id }}">Read More</button>
+                    </form>
+
+                </th>
+            </tr>
+            {% endif %}
+
+        {% endfor %}
+    </tbody>
+ </table>
+
+     {% endfor %}
+
+ {% else %}
+
+    <h4>Positions you're looking for:</h4>
+    <br><br>
+
+    {% for position in positions %}
+
+    <h5>{{ position }}</h5>
+ <table class="table">
+    <thead>
+        <tr>
+            <th class="text-start">Company Name</th>
+            <!--<th class="text-end">Job Position</th>-->
+            <th class="text-end">Years of experience</th>
+            <th class="text-end"> </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for id in ids %}
+            {% if id_job[id] == position %}
+            <tr>
+                <th class="text-start">{{ info[id]["company"] }}</th>
+                <!--<th class="text-end">{{ id_job[id] }}</th>-->
+                <th class="text-end"> {{ id_years[id] }}</th>
+                <th class="text-end">
+                    <form action="/readmore" method="post">
+                        <button name="nameid" value="{{ id }}">Read More</button>
+                    </form>
+
+                </th>
+            </tr>
+            {% endif %}
+
+        {% endfor %}
+    </tbody>
+ </table>
+ <br><br>
+    {% endfor %}
+
+    <br><br>
+
+    <h4>Based on your major:</h4>
+
+
+    <table class="table">
+    <thead>
+        <tr>
+            <th class="text-start">Company Name</th>
+            <th class="text-end">Job Position</th>
+            <th class="text-end">Years of experience</th>
+            <th class="text-end"> </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for id in majorids %}
+            <tr>
+                <th class="text-start">{{ majorinfo[id]["company"] }}</th>
+                <th class="text-end">{{ majorid_job[id] }}</th>
+                <th class="text-end"> {{ majorid_years[id] }}</th>
+                <th class="text-end">
+                    <form action="/readmore" method="post">
+                        <button name="nameid" value="{{ id }}">Read More</button>
+                    </form>
+
+                </th>
+            </tr>
+
+
+        {% endfor %}
+    </tbody>
+ </table>
+
+
+
+ {% endif %}
+
+
+
+
+
+{% endblock %}

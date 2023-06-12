@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Employer
+{% endblock %}
+
+{% block main %}
+
+
+    <h3> We are looking for: </h3>
+
+    <br><br>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <!--<th class="text-start">ID</th>-->
+                
+                <th class="text-start">Job Position</th>
+                <th class="text-end">Major</th>
+                <th class="text-end">Years of Experience</th>
+                <th class="text-end"></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for row in hiring %}
+                <tr>
+                    <!--<th class="text-start">{{ row["id"] }}</th>-->
+                    
+                    <th class="text-start">{{ row["position"] }}</th>
+                    <th class="text-end">{{ row["major"] }}</th>
+                    <th class="text-end">{{ row["years"] }}+</th>
+                    <th class="text-end"><form action="/editjob" method="post">
+                        <button name="position" value="{{row.position}}">Edit</button>
+                    </form>
+
+                        <!--<form onSubmit="return confirm('Are you sure you wish to delete?');" action="/deletejob" method="post">-->
+                        <!--    <button name="delete" value="{{row.id}}">Delete</button>-->
+                        <!--</form>-->
+                        <form onSubmit="return confirm('Are you sure you wish to delete?');" action="/deletejob" method="post">
+                            <button name="delete" value="{{row.position}}">Delete</button>
+                        </form>
+
+                    </th>
+
+                </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+    <form action="/" method="post">
+         <button>Add Job</button>
+    </form>
+
+
+
+
+{% endblock %}

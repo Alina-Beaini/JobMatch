@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Employee
+{% endblock %}
+
+{% block main %}
+
+    <h3> I am seeking:  </h3>
+    <br><br>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="text-start">Job Position</th>
+                <th class="text-end">Years of Experience</th>
+                <th class="text-end"></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for row in seeking %}
+                <tr>
+                    <th class="text-start">{{ row["position"] }}</th>
+                    <th class="text-end">{{ row["years"] }}</th>
+                    <th class="text-end">
+                    <form action="/editjob" method="post">
+                        <button name="position" value="{{row.position}}">Edit Years</button>
+                    </form>
+                    <form onSubmit="return confirm('Are you sure you wish to delete?');" action="/deletejob" method="post">
+                            <button name="delete" value="{{row.position}}">Delete</button>
+                        </form>
+
+
+                    </th>
+
+                </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+     <form action="/" method="post">
+         <button>Add Job</button>
+    </form>
+
+{% endblock %}
