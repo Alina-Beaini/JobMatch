@@ -19,3 +19,6 @@ Finding Matches:
 Once matches are found, the users can always click on "See more" to get more information about their matches, specifically their contact information so that they can contact them.
 
 Finally, the users' profiles can be eddited at any time: for example if the phone numbers/emails change and or if a jobseeker acquired more years of experience, and so on...
+
+
+
