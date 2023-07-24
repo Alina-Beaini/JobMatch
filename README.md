@@ -1,9 +1,6 @@
 # Job Match
 #### Video Demo:  <https://www.youtube.com/watch?v=h-0h9cIJlgU>
 
-
-# Job Match
-
 Job Match is a web application that helps match employers to jobseekers based on needs, majors, years of experience, etc.
 
 ## Registration Process
